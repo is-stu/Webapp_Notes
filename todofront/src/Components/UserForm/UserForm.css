@@ -1,0 +1,50 @@
+.container-userform {
+  background-color: #d3d3d3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 40px;
+  padding: 50px 40px;
+  border-radius: 20px 20px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.userform-text {
+  text-transform: uppercase;
+}
+
+.userform__input {
+  border: none;
+  width: 300px;
+  height: 30px;
+  border-radius: 20px 20px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  text-align: center;
+  margin: 10px 0;
+  outline: none;
+}
+
+.userform__button {
+  display: inherit;
+  flex-direction: inherit;
+  margin: 10px auto;
+  border: 1px solid #00b347;
+  width: 300px;
+  height: 40px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  color: #00b347;
+  border-radius: 20px 20px;
+  transition: ease 0.5s;
+  text-transform: uppercase;
+}
+
+.userform__button:hover {
+  transition: ease 0.5s;
+  color: black;
+  background-color: #00b347;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+}
