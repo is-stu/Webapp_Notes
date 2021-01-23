@@ -4,7 +4,6 @@ import './UserList.css';
 import axios from 'axios';
 // importando icon delete
 import DeleteIcon from '@material-ui/icons/Delete';
-import UpdateIcon from '@material-ui/icons/Update';
 // importando alertas
 import Swal from 'sweetalert2';
 
@@ -51,11 +50,6 @@ export function UsersList() {
                 className='delete-icon'
                 onClick={(e) => deleteUser(e, user._id)}>
                 <DeleteIcon />
-              </button>
-              <button
-                className='update-icon'
-                onClick={(e) => console.log('Holi actualizando')}>
-                <UpdateIcon />
               </button>
             </li>
           ))

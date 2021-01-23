@@ -1,0 +1,26 @@
+.notelist-title {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+.notecard {
+  background-color: #d3d3d3;
+  margin: 40px 40px;
+  padding: 50px 40px;
+  border-radius: 20px 20px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.notecard__title {
+  text-align: center;
+}
+
+.notecard__content {
+  padding-top: 10px;
+  line-height: 25px;
+}

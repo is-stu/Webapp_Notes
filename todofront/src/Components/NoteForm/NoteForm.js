@@ -5,8 +5,9 @@ import axios from 'axios';
 // importando libreria para el calendar
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import Swal from 'sweetalert2';
 
-export function NoteForm() {
+export function NoteForm(props) {
   const [users, setUsers] = useState([]);
   const [userSelected, setUserSelected] = useState('');
   const [date, setDate] = useState(new Date());
@@ -26,7 +27,7 @@ export function NoteForm() {
     setUserSelected(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newNote = {
       title,
@@ -34,7 +35,9 @@ export function NoteForm() {
       date,
       author: userSelected,
     };
-    console.log(newNote);
+    await axios.post('http://localhost:4000/api/notes', newNote);
+    Swal.fire({ title: 'Note Created', icon: 'success' });
+    props.history.push('/');
   };
 
   const handleChangeDate = (date) => {
@@ -55,7 +58,7 @@ export function NoteForm() {
         <div className='group group__selected'>
           <h4>Registered users</h4>
           <select className='select-noteform' onChange={handleChange} required>
-            <option defaultValue>Select a user</option>
+            <option defaultValue></option>
             {users.map((user) => (
               <option key={user._id} value={user.username}>
                 {user.username}
@@ -90,7 +93,7 @@ export function NoteForm() {
           />
         </div>
         <div className='group__date'>
-          <DatePicker selected={date} onChange={handleChangeDate} />
+          <DatePicker selected={date} onChange={handleChangeDate} className='datePicker' />
         </div>
         <div className='noteform__button'>
           <input type='submit' value='Crear' id='button' />
