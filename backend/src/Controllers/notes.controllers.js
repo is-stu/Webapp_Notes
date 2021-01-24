@@ -34,7 +34,7 @@ notesControllers.updateNote = async (req, res) => {
 };
 
 notesControllers.deleteNote = async (req, res) => {
-  await notesModel.findOneAndDelete(req.params.id);
+  await notesModel.findByIdAndRemove(req.params.id);
   res.json({ message: 'Note Deleted' });
 };
 
